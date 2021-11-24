@@ -1,3 +1,12 @@
+terraform {
+  backend "s3" {
+    bucket = "test-cristhian"
+    key    = "terraform"
+    region = "us-west-2"
+    profile = "dev"
+  }
+}
+
 resource "null_resource" "hello_world" {
   provisioner "local-exec" {
     command = "echo hello world!!"
