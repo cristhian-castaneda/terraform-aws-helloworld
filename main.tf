@@ -7,9 +7,13 @@ terraform {
   }
 }
 
+provider "aws" {
+  profile = "dev"
+  region = "us-east-2"
+}
+
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
-  region = var.region
   acl    = "private"
 
   tags = {
