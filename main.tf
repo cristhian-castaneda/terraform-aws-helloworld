@@ -7,6 +7,16 @@ terraform {
   }
 }
 
+resource "aws_s3_bucket" "bucket" {
+  bucket = var.bucket_name
+  acl    = "private"
+
+  tags = {
+    Name        = "Bucket Created From Local Terraformer"
+    Environment = "Cristhian-Dev"
+  }
+}
+
 resource "null_resource" "hello_world" {
   provisioner "local-exec" {
     command = "echo hello world!!"
