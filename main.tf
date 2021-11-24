@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "test-cristhian"
     key    = "terraform"
-    region = "us-west-2"
+    region = "us-east-2"
     profile = "dev"
   }
 }
