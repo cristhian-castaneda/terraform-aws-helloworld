@@ -2,14 +2,14 @@ terraform {
   backend "s3" {
     bucket = "test-cristhian"
     key    = "terraform"
-    region = "us-east-2"
+    region = var.region
     profile = "dev"
   }
 }
 
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
-  region = "us-east-2"
+  region = var.region
   acl    = "private"
 
   tags = {

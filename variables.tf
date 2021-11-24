@@ -13,3 +13,8 @@ variable "bucket_name" {
   type        = string
   description = "The name of the bucket to store the files"
 }
+
+variable "region" {
+  type        = string
+  default     = "us-east-2"
+}
